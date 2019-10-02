@@ -15,15 +15,27 @@ function addTwitter(event) {
   twitterText.value = "";
 }
 
-twitterText.addEventListener('keyup', changeCounter);
+twitterText.addEventListener('keyup', disabledButton);
 
-function changeCounter(event) {
+twitterText.addEventListener('keyup', changeColor);
+
+function disabledButton(event) {
   const counterValue = (maxLength - twitterText.value.length);
   twitterCounter.textContent = counterValue;
-  if (counterValue ===maxLength) {
+  if (counterValue === maxLength || counterValue < 0) {
     tweetButton.setAttribute('disabled', "");
   } else {
     tweetButton.removeAttribute('disabled');
   }
-
 }
+
+function changeColor() {
+  if (twitterText.value.length > 130) {
+    twitterCounter.setAttribute('class', 'red');
+  } if (twitterText.value.length > 120) {
+    twitterCounter.setAttribute('class', 'yellow');
+  } else {
+    twitterCounter.setAttribute('class', 'blue');
+  }
+}
+
