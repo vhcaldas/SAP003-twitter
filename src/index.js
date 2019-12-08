@@ -5,10 +5,9 @@ const tweetButton = document.querySelector("#tweet-button");
 const tweetList = document.querySelector("#tweet-List");
 const twitterCounter = document.querySelector("#twitter-Counter");
 
-
 tweetButton.addEventListener("click", addTwitter);
 
-function addTwitter(event) {
+function addTwitter() {
   const newLi = document.createElement("li");
   newLi.textContent = twitterText.value;
   tweetList.appendChild(newLi);
@@ -19,7 +18,7 @@ twitterText.addEventListener('keyup', disabledButton);
 
 twitterText.addEventListener('keyup', changeColor);
 
-function disabledButton(event) {
+function disabledButton() {
   const counterValue = (maxLength - twitterText.value.length);
   twitterCounter.textContent = counterValue;
   if (counterValue === maxLength || counterValue < 0) {
@@ -30,10 +29,11 @@ function disabledButton(event) {
 }
 
 function changeColor() {
-  if (twitterText.value.length > 130) {
+  let twitterLenght = twitterText.value.length;
+  if (twitterLenght > 130) {
     twitterCounter.setAttribute('class', 'red');
-  } if (twitterText.value.length > 120) {
-    twitterCounter.setAttribute('class', 'yellow');
+  } else if (twitterLenght > 120) {
+    twitterCounter.setAttribute('class', 'orange');
   } else {
     twitterCounter.setAttribute('class', 'blue');
   }
