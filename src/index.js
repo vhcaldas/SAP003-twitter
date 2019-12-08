@@ -16,10 +16,8 @@ function addTwitter() {
 
 twitterText.addEventListener('keyup', disabledButton);
 
-twitterText.addEventListener('keyup', changeColor);
-
 function disabledButton() {
-  const counterValue = (maxLength - twitterText.value.length);
+  let counterValue = (maxLength - twitterText.value.length);
   twitterCounter.textContent = counterValue;
   if (counterValue === maxLength || counterValue < 0) {
     tweetButton.setAttribute('disabled', "");
@@ -28,8 +26,10 @@ function disabledButton() {
   }
 }
 
+twitterText.addEventListener('keyup', changeColor);
+
 function changeColor() {
-  let twitterLenght = twitterText.value.length;
+  const twitterLenght = twitterText.value.length;
   if (twitterLenght > 130) {
     twitterCounter.setAttribute('class', 'red');
   } else if (twitterLenght > 120) {
@@ -38,4 +38,3 @@ function changeColor() {
     twitterCounter.setAttribute('class', 'blue');
   }
 }
-
