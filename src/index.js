@@ -9,12 +9,16 @@ tweetButton.addEventListener("click", addTwitter);
 
 function addTwitter() {
   const newLi = document.createElement("li");
-  newLi.textContent = twitterText.value;
+  const dateString = new Date().toTimeString().substring(0,5);
+  const textwithEnters = twitterText.value.replace(/\n/g, '<BR>');
+  newLi.innerHTML = '[' + dateString +'] ' + textwithEnters;
   tweetList.appendChild(newLi);
   twitterText.value = "";
+
+  disabledButton();
 }
 
-twitterText.addEventListener('keypress', disabledButton);
+twitterText.addEventListener('keyup', disabledButton);
 
 function disabledButton() {
   let counterValue = (maxLength - twitterText.value.length);
@@ -26,7 +30,7 @@ function disabledButton() {
   }
 }
 
-twitterText.addEventListener('keypress', changeColor);
+twitterText.addEventListener('keyup', changeColor);
 
 function changeColor() {
   const twitterLenght = twitterText.value.length;
@@ -39,7 +43,7 @@ function changeColor() {
   }
 }
 
-twitterText.addEventListener('keypress', changeLines);
+twitterText.addEventListener('keyup', changeLines);
 
 function changeLines (){
   const textLines = twitterText.value.split('\n');
