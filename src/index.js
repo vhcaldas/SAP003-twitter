@@ -14,7 +14,7 @@ function addTwitter() {
   twitterText.value = "";
 }
 
-twitterText.addEventListener('keyup', disabledButton);
+twitterText.addEventListener('keypress', disabledButton);
 
 function disabledButton() {
   let counterValue = (maxLength - twitterText.value.length);
@@ -26,7 +26,7 @@ function disabledButton() {
   }
 }
 
-twitterText.addEventListener('keyup', changeColor);
+twitterText.addEventListener('keypress', changeColor);
 
 function changeColor() {
   const twitterLenght = twitterText.value.length;
@@ -37,4 +37,11 @@ function changeColor() {
   } else {
     twitterCounter.setAttribute('class', 'blue');
   }
+}
+
+twitterText.addEventListener('keypress', changeLines);
+
+function changeLines (){
+  const textLines = twitterText.value.split('\n');  
+  twitterText.setAttribute('rows', textLines.length);
 }
