@@ -14,11 +14,10 @@ function addTwitter() {
   newLi.innerHTML = '[' + dateString +'] ' + textwithEnters;
   tweetList.appendChild(newLi);
   twitterText.value = "";
-
   disabledButton();
 }
 
-twitterText.addEventListener('keyup', disabledButton);
+twitterText.addEventListener('keypress', disabledButton);
 
 function disabledButton() {
   let counterValue = (maxLength - twitterText.value.length);
@@ -30,7 +29,7 @@ function disabledButton() {
   }
 }
 
-twitterText.addEventListener('keyup', changeColor);
+twitterText.addEventListener('keypress', changeColor);
 
 function changeColor() {
   const twitterLenght = twitterText.value.length;
@@ -43,7 +42,7 @@ function changeColor() {
   }
 }
 
-twitterText.addEventListener('keyup', changeLines);
+twitterText.addEventListener('keypress', changeLines);
 
 function changeLines (){
   const textLines = twitterText.value.split('\n');
