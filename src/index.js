@@ -42,6 +42,9 @@ function changeColor() {
 twitterText.addEventListener('keypress', changeLines);
 
 function changeLines (){
-  const textLines = twitterText.value.split('\n');  
-  twitterText.setAttribute('rows', textLines.length);
+  const textLines = twitterText.value.split('\n');
+  let linesCount = textLines.reduce((acum, line) => 
+    acum + Math.max(Math.ceil(line.length / 50), 1), 0
+  );
+  twitterText.setAttribute('rows', linesCount);
 }
