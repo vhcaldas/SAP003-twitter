@@ -1,10 +1,8 @@
 #Desafio extra: twitter
 
-Neste desafio, vamos replicar o feed de notícias do Twitter. Para tanto, seguiremos um fluxo de versões que a guiarão para se concentrar mais eficientemente :)
+Neste desafio, replicamos o _feed_ de notícias do Twitter. Para tanto, seguiremos um fluxo de versões que a guiarão para se concentrar mais eficientemente :)
 
-Você pode adaptar o design como quiser, mas não demore para definir as cores ou fontes. Se quiser, pode replicar o design da página oficial :). Aqui está um exemplo:
-
-![exemplo twitter](https://media.giphy.com/media/3ov9jP4RIGQCUQOScg/giphy.gif)
+O design é responsivo, em modo escuro, e adaptável em todas as telas.
 
 ## Versão 0.0.1
 
@@ -12,7 +10,6 @@ Você pode adaptar o design como quiser, mas não demore para definir as cores o
 - Adicione um evento de click ao botão ou de submit no formulário.
 - No evento, obter o texto.
 - Adicione o texto ao HTML.
-- Salvar os tweets no `localStorage`.
 
 ## Versão 0.0.2
 
